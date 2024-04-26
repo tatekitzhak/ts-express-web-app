@@ -1,0 +1,39 @@
+# Build
+public/css/main.css
+
+# API keys and secrets
+.env
+
+.cache/
+**/.cache/
+
+node_modules/
+**/node_modules/
+/.pnp
+.pnp.js
+
+.env
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# OS metadata
+**/.DS_Store
+.DS_Store
+
+# Optional npm cache directory
+.npm
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Editors
+.idea
+*.iml
+
+# Ignore built ts files
+dist/**/*

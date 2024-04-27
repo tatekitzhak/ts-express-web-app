@@ -1,4 +1,70 @@
-# How to Setup a TypeScript, Node.js and Express Web Applicaton Project
+# How to Setup a TypeScript, Node.js and Express Web Application Project
+
+# Structure of a Web Application
+
+├── build
+├── src
+│   ├── controllers
+│   │   ├── Api
+│   │   │   ├── Auth
+│   │   │   │   ├── Login.ts
+│   │   │   │   ├── RefreshToken.ts
+│   │   │   │   └── Register.ts
+│   │   │   └── Home.ts
+│   │   ├── Auth
+│   │   │   ├── Login.ts
+│   │   │   ├── Logout.ts
+│   │   │   ├── Register.ts
+│   │   │   └── Social.ts
+│   │   ├── Account.ts
+│   │   └── Home.ts
+│   ├── exception
+│   │   ├── Handler.ts
+│   │   └── NativeEvent.ts
+│   ├── interfaces
+│   │   ├── models
+│   │   │   └── Schema.ts
+│   │   └── vendors
+│   │        ├── index.ts
+│   │        ├── INext.ts
+│   │        ├── IRequest.ts
+│   │        └── IResponse.ts
+│   ├── middlewares
+│   │   ├── CORS.ts
+│   │   ├── CsrfToken.ts
+│   │   ├── Http.ts
+│   │   ├── Kernel.ts
+│   │   ├── Log.ts
+│   │   ├── Statics.ts
+│   │   ├── StatusMonitor.ts
+│   │   └── View.ts
+│   ├── models
+│   │   └── User.ts
+│   ├── providers
+│   │   ├── App.ts
+│   │   ├── Cache.ts
+│   │   ├── Database.ts
+│   │   ├── Express.ts
+│   │   ├── Locals.ts
+│   │   ├── Passport.ts
+│   │   ├── Queue.ts
+│   │   └── Routes.ts
+│   ├── routes
+│   │   ├── Api.ts
+│   │   └── Web.ts
+│   ├── services
+│   │   └── strategies
+│   │        ├── Google.ts
+│   │        ├── Local.ts
+│   │        └── Twitter.ts
+│   └── index.ts
+├── .env
+├── .gitignore
+├── nodemon.json
+├── package.json
+├── README.md
+├── tsconfig.json
+└── tslint.json
 
 ## Initial Setup and Configuring The Workspace
 - `mkdir ts-express-web-app`

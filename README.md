@@ -1,7 +1,7 @@
 # How to Setup a TypeScript, Node.js and Express Web Application Project
 
 # Structure of a Web Application
-
+```bash
 ├── build
 ├── src
 │   ├── controllers
@@ -65,6 +65,7 @@
 ├── README.md
 ├── tsconfig.json
 └── tslint.json
+```
 
 ## Initial Setup and Configuring The Workspace
 - `mkdir ts-express-web-app`

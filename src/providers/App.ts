@@ -7,7 +7,7 @@ const port: number = 3000
 class App {
     private server: http.Server
     private port: number
-    public router: Router
+    public router: any;
     public app: any;
     constructor(_port: number) {
         this.port = _port
@@ -23,10 +23,10 @@ class App {
 
         Express.init();
     }
-    public Start() {
+    public Start():void {
 
-        this.app.get('/', (req: Request, res: Response) => {
-            console.log('req.useraaa'); // 👈️ use req.user
+        this.app.get('/', (req: Request, res: any) => {
+            console.log('req.useraaa'); 
 
             res.json({ ab: 'Hello World!' });
         });

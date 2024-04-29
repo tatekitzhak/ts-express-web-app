@@ -4,6 +4,12 @@ import Express from './Express';
 
 const port: number = 3000
 
+
+  export interface FormattedResponse<ResponseData> extends Response<{ success: boolean, data: ResponseData }>{
+      status(arg0: number):any;
+
+  }
+
 class App {
     private server: http.Server
     private port: number
@@ -13,7 +19,7 @@ class App {
         this.port = _port
         this.app = express();
         this.router = Router();
-        this.server = new http.Server(this.app)
+        this.server = new http.Server(this.app.use(this.router));
 
     }
 
@@ -25,19 +31,16 @@ class App {
     }
     public Start():void {
 
-        this.app.get('/', (req: Request, res: any) => {
-            console.log('req.useraaa'); 
-
-            res.json({ ab: 'Hello World!' });
-        });
-
-        this.router.get('/',function (req: Request, res: Response, next: NextFunction) {
+        this.router.route('/').get( function(req: Request<any, any, { email: string, password: string,}, any, any>, 
+            res: FormattedResponse<string>): void {
             console.log('req: Request, res: Response');
-            res.json({ test: 'Hello World!' });
-            next();
+            // res.json({ test: 'Hello World!!!' });
+            res.status(200).send({success: false, data: "Token Missing"})
+           
         });
 
         this.app.use('/api', this.router);
+        
 
         this.server.listen(this.port, () => {
             console.log(`Server listening on port ${this.port}.`)
